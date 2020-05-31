@@ -9,7 +9,7 @@ server.use(restify.plugins.bodyParser())
 server.listen(config.PORT, () => {
   // mongoose.set('useNewUrlParser', true)
   mongoose.connect(config.DB_URL,
-    { useUnifiedTopology: true, useNewUrlParser: true }
+    { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false }
   )
 })
 const db = mongoose.connection
